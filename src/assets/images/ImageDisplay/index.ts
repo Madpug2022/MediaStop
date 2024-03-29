@@ -1,0 +1,9 @@
+export { default as slide1 } from './Avenger_Endgame_Poster_Oficial.webp';
+export { default as slide2 } from './El_menau-905441147-large.jpg';
+export { default as slide3 } from './Misiaon_imposible_Sentencia_mortal_Parte_1-902615661-large.jpg';
+export { default as slide4 } from './db_posters_55055.jpg';
+export { default as slide5 } from './el-misterio-de-glass-onion.jpg';
+export { default as slide6 } from './it.jpg';
+export { default as slide7 } from './john.jpg';
+export { default as slide8 } from './joker.jpg';
+export { default as slide9 } from './s-l1200.webp';

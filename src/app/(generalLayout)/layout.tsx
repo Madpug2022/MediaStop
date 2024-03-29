@@ -6,7 +6,7 @@ const layout = ({ children }: { children: React.ReactElement }) => {
         <main className="min-h-screen bg-gradient-to-b from-primary to-secondary text-white">
             <NavBar />
             <SubNavbar />
-            <div className="p-5">
+            <div className="p-5 w-full h-full">
                 {children}
             </div>
 
