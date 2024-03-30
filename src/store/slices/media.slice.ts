@@ -17,12 +17,15 @@ export const mediaSlice = createSlice({
     name: "mediaSlice",
     initialState,
     reducers: {
-
+        storeData: (state, action) => {
+            state.movies = action.payload.movies;
+            state.series = action.payload.series;
+        }
     },
 });
 
 export default mediaSlice;
 
 export const {
-
+    storeData
 } = mediaSlice.actions;

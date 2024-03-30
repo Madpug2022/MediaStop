@@ -11,7 +11,7 @@ export const LINKS_LEFT: LinkI[] = [
 ]
 export const LINKS_RIGTH: LinkI[] = [
     {
-        name: "Contacto",
-        url: "/"
+        name: "Github",
+        url: "https://github.com/Madpug2022"
     },
 ]
