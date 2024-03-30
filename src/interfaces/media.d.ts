@@ -32,3 +32,16 @@ export interface SeriesI {
     vote_average: number,
     vote_count: number
 }
+
+export interface MovieResultsI {
+    page: number,
+    results: MovieI[],
+    total_pages: number,
+    total_results: number
+}
+export interface SeriesResultsI {
+    page: number,
+    results: SeriesI[],
+    total_pages: number,
+    total_results: number
+}

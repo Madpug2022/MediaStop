@@ -6,7 +6,7 @@ import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
 const Pagination = () => {
     const router = useRouter();
     const searchParams = useSearchParams()
-    const [page, setPage] = useState(searchParams.get('page') || 1);
+    const [page, setPage] = useState(searchParams.get('page') ?? 1);
 
     useEffect(() => {
         router.push(`?page=${page}`);

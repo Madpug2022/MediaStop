@@ -56,6 +56,7 @@ const Display = ({ movieData, seriesData }:
                                     score={movie.vote_average}
                                     description={movie.overview}
                                     releaseDate={movie.release_date}
+                                    tab={tab}
                                 />
                             </div>
                         ))
@@ -69,6 +70,7 @@ const Display = ({ movieData, seriesData }:
                                     score={serie.vote_average}
                                     description={serie.overview}
                                     releaseDate={serie.first_air_date}
+                                    tab={tab}
                                 />
                             </div>
                         ))

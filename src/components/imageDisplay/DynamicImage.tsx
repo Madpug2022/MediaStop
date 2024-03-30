@@ -10,7 +10,7 @@ const DynamicImage = React.memo(
         images,
         direction,
     }: {
-        className: any;
+        className: React.CSSProperties | undefined;
         images: string[];
         direction: "left" | "right" | "down";
     }) => {
