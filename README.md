@@ -1,29 +1,30 @@
-# Create T3 App
+# MediaStop
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
-
-## What's next? How do I make an app with this?
-
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
-
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+Es una web sencilla creada con T3 Nextjs y React. Recoge informacion sencilla de la API de themoviedb.org para dar por pantalla las peliculas y series mas populares del momento con una UI e interfaz agradable gracias a Motion Framer.
 
 - [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
 - [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+- [Framer Motion]
+- [Jest]
+- [React Testing Library]
 
-## Learn More
+## Instalacion
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+- Clonar el repositorio en carpeta local
+- Instalacion de dependencias con npm install o yarn install a traves de terminal
+- Para poder ver en local los datos necesitaras una API key propia que puedes recibir en la pagina themoviedb.org, deberas crear un archivo .env en la carpeta principal y seguir el ejemplo de .env.example
+- Ejecutar npm run dev (la aplicacion correra por defecto en localhost:3000)
+- La aplicacion cuenta con tests unitarios para control de componentes y funcionalidades, puede correrse utilizando el comando **npm run test** o **yarn run test**
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+## Despliegue
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+La web se encuentra desplegada en un entorno de produccion en vercel en la siguiente URL: https://media-stop.vercel.app/
 
-## How do I deploy this?
+## Capturas
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+![Captura de pantalla 2024-03-31 215203](https://github.com/Madpug2022/MediaStop/assets/98781462/48e80553-a0b3-466c-bbe2-f9edb84a5a57)
+
+![Captura de pantalla 2024-03-31 215242](https://github.com/Madpug2022/MediaStop/assets/98781462/7f980b1f-91a6-43b3-bd92-89a95648dd9b)
+
+![Captura de pantalla 2024-03-31 215304](https://github.com/Madpug2022/MediaStop/assets/98781462/32a481a1-4c2e-4b63-873f-5ae718145a20)
+
