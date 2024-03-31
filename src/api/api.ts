@@ -29,10 +29,11 @@ export const requests = {
             return responseBody(response);
         } catch (error: any) {
             console.log(error);
+            throw new Error("Error");
         }
     },
 
-    get: (url: string, body?: {}) => {
+    get: (url: string) => {
         return requests.request("get", url);
     },
 

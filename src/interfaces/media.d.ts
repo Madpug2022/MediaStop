@@ -22,13 +22,14 @@ export interface SeriesI {
     id: number,
     origin_country: string[],
     original_language: string,
-    original_title: string,
+    original_title?: string,
+    original_name?: string,
     overview: string,
     popularity: number,
     poster_path: string,
     first_air_date: string,
-    title: string,
-    video: boolean,
+    name: string,
+    video?: boolean,
     vote_average: number,
     vote_count: number
 }

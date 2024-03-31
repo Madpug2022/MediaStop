@@ -9,6 +9,7 @@ import { Carousel } from 'react-responsive-carousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import DisplayCard from './DisplayCard'
 import Pagination from './Pagination'
+import Loader from '../ui/Loader'
 
 const Display = ({ movieData, seriesData }:
     {
@@ -25,11 +26,13 @@ const Display = ({ movieData, seriesData }:
     }, [movieData, seriesData])
     return (
         <section
+            data-testid="display-component"
             className='w-full h-full flex flex-col items-center bg-black p-2 rounded-lg gap-2'>
             <nav className='w-full flex items-center justify-between'>
                 <ul className='flex justify-start gap-2'>
                     {TAB_ELEMENTS.map((element, index) => (
                         <li
+                            data-testid={`tab-${element.value}`}
                             key={index}
                             className={`cursor-pointer p-2 rounded-lg hover:text-fourth transition-colors duration-300 ${tab === element.value ? 'border border-fourth text-fourth' : ''}`}
                             onClick={() => setTab(element.value)}
@@ -40,7 +43,7 @@ const Display = ({ movieData, seriesData }:
                 </ul>
                 <Pagination />
             </nav>
-            <div className='p-3 flex items-center justify-center  w-full h-full'>
+            {movieData && seriesData ? <div className='p-3 flex items-center justify-center  w-full h-full'>
                 <Carousel
                     showIndicators={false}
                     infiniteLoop={true}
@@ -66,7 +69,7 @@ const Display = ({ movieData, seriesData }:
                                 <DisplayCard
                                     id={serie.id}
                                     image={serie.poster_path}
-                                    name={serie.title}
+                                    name={serie.name}
                                     score={serie.vote_average}
                                     description={serie.overview}
                                     releaseDate={serie.first_air_date}
@@ -77,6 +80,8 @@ const Display = ({ movieData, seriesData }:
                     }
                 </Carousel>
             </div>
+                :
+                <Loader />}
         </section>
     )
 }
