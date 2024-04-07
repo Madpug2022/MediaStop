@@ -1,6 +1,4 @@
-import { SeriesI, SeriesResultsI } from "@/interfaces/media";
-
-export const POPULAR_SERIES_RESPONSE_MOCK: SeriesResultsI = {
+export const POPULAR_SERIES_RESPONSE_MOCK = {
     page: 1,
     results: [
         {

@@ -3,7 +3,6 @@ import { MOVIES } from "@/api/movies/Movies-api";
 import { SERIES } from "@/api/series/Series-api";
 import Display from "@/components/display/Display";
 import DynamicImageDisplay from "@/components/imageDisplay/DynamicDisplat";
-import { MovieResultsI, SeriesResultsI } from "@/interfaces/media";
 import { Suspense } from "react";
 import Loading from "./loading";
 
@@ -51,16 +50,17 @@ export default async function HomePage({ searchParams = { page: '1' } }: { searc
   const page = searchParams.page ? parseInt(searchParams.page) : 1
   const locale = 'ES'
 
-  const movieData: MovieResultsI = await MOVIES.getPopularMovies(locale, page)
-  const seriesData: SeriesResultsI = await SERIES.getPopularSeries(locale, page)
+  const fetchMovies = MOVIES.getPopularMovies(locale, page).then(data => ({ success: true, data })).catch(error => ({ success: false, error }));
+  const fetchSeries = SERIES.getPopularSeries(locale, page).then(data => ({ success: true, data })).catch(error => ({ success: false, error }));
 
+  const [movieResult, seriesResult] = await Promise.all([fetchMovies, fetchSeries]);
 
-  if (!movieData || !seriesData) {
+  if (!movieResult.success || !seriesResult.success) {
     return (
       <section className="flex w-full h-full">
         Hubo un error en la red por favor intenta recargando la pagina
       </section>
-    )
+    );
   }
 
   return (
@@ -68,7 +68,7 @@ export default async function HomePage({ searchParams = { page: '1' } }: { searc
       <section className="flex w-full h-full">
         <div className="w-1/2 h-full p-3"><DynamicImageDisplay /></div>
         <div className="w-1/2">
-          <Display movieData={movieData.results} seriesData={seriesData.results} />
+          <Display movieData={(movieResult as { success: boolean; data: any }).data.results} seriesData={(seriesResult as { success: boolean; data: any }).data.results} />
         </div>
       </section>
     </Suspense>
